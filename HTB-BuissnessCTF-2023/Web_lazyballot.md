@@ -30,4 +30,11 @@ const options = {
     }
 }
 ```
-- This works because the database now checks if a user with the username: admin and a password that is not equal to "" exists. Obviously the password differs, so the user is logged in as Admin  
+- This works because the database now checks if a user with the username: admin and a password that is not equal to "" exists. Obviously the password differs, so the user is logged in as Admin 
+
+3. Possible Mitigation
+- check for regex in the password and if one is found dont allow it
+  + This might be not an optimal solution due to the fact, that there might be accidentially the regex used as a password of a certain user
+- Another more practiacal solution and anyways better practices is hashishing
+  + Take the password, hash it and then store the hash in the database
+  + with hashing no escapesequence with certain characters is possible

@@ -51,3 +51,9 @@ PROMPT = PromptTemplate(
 - I mostly use ```chmod +s bash``` for that purpose
 - When running it with sudo and then run ```bash -p``` we become root and can read the root flag
 
+
+4. Possible mitigation
+- For the web-interface for once, dont allow every user to register in wordpress as it is a risk in itself
+- then also dont allow php-code to be added to a user-created-site -> one workaround could be that if it really is neccessary for someone the code could be seperatly described and the admin would manually add it to the page, as it needs to be checked anyways
+- inside the system, hashing passwords in the database connection strings is also a very good option since it wouldnt have led to privilege escalation in this case
+- also at last dont allow users to run commands as sudo or if really needed check for vulnerabilities in the code to mitigate the last vulnerability

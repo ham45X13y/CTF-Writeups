@@ -108,3 +108,9 @@ print("Send this to the server: ",forged)
 hash=sha256(mt1.get_state()+mt2.get_state()).digest().hex()
 print("check hashes: ",hash, " == ",forged)
 ```
+
+### Mitigation:
+- In the real world this attack is not really a big issue because most of the times the attacker cant control the input nor change the root hash
+- Still if you want to address this issue change the hashing algorithm so that transactions would have another algorithm then the root hash calculations
+- Changeing the algorithm an attacker would now have to find transactions that would lead to exactly those hashes which, when hashed had to get the same result and cause a crash
+- This task is very hard and for standard hashing algorithms not possible to solve in a reasonable amount of time ( given the transactions are checked to be different, else obviously it would be very easy) 

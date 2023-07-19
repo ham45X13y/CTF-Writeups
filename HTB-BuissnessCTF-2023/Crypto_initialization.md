@@ -51,3 +51,8 @@ flag=xor(temp,message)
 
 print(flag)
 ```
+
+### Possible mitigation
+- If aes in ctr mode somehow is the only viable encryption for you dont reuse the key, but change it for every useage
+- Also changing the aes type to a less vulnerable mode like cbc
+- Additionally if this is checked serverside calculat a MAC on it to check if someone has tampered with the encryption
